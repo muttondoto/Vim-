@@ -1,13 +1,11 @@
 " Einar Cabrera [einn.o@yahoo.com]
 
 filetype plugin on
-set guicursor =n-v-c:block
 set nocompatible
 set number
 set relativenumber
 syntax on
 set cursorline
-"set cursorcolumn
 set hlsearch
 
 let mapleader = " "
@@ -44,6 +42,9 @@ Plug 'sheerun/vim-polyglot'
 Plug 'vim-scripts/vim-dict'
 Plug 'vim-airline/vim-airline'
 Plug 'catppuccin/vim', { 'as': 'catppuccin' }
+Plug 'lervag/vimtex'
+Plug 'honza/vim-snippets'
+Plug 'SirVer/ultisnips'
 
 call plug#end()
 
@@ -55,6 +56,15 @@ colorscheme catppuccin_mocha
 
 nmap <leader><leader> <Plug>(easymotion-prefix)
 nmap  <Leader>q <Plug>(easymotion-bd-w)
+
+" Vimtex
+
+" let g:vimtex_view_method = 'sumatrapdf'
+
+" Snips
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<tab>"
+let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
 
 
 " My functions
@@ -74,7 +84,7 @@ nmap  <Leader>q <Plug>(easymotion-bd-w)
 			endif
 		endfunction
 
-		" Set spelllang spanish [it switches between them]
+		" Set spelllang Spanish [it switches between them]
 
 		function! ChangeLanguage()
 			if g:statuslanguage
